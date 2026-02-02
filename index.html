@@ -15,22 +15,27 @@
       <h1>Abuse Clawdbot to steal session credentials</h1>
       
       <h2>Overview</h2>
-      <p>If a user has the Clawdbot browser extension enabled, you can use this POC to steal authentication cookies from other browser tabs.</p>
+      <p>If a user has an unpatched version of the Clawdbot browser extension enabled, you can use this POC to steal authentication cookies from other browser tabs.</p>
       
       <h2>Setup</h2>
 
       <ul>
         <li>Completely close Chrome</li>
         <li>Start a new Chrome session with only two tabs</li>
-        <li>In the first tab, load this page.</li>
+        <li>In the first tab, load this page.  <storng>Ensure that you're using the insecure http version</storng></li>
         <li>In the second tab, load the page of your choice.</li>
         <li>"Clawdbot Browser Relay" extension must be installed and active -- "Clawdbot Browser Relay started debugging this browser" should be visible at the top of both pages
-          <p><img style="width: 85%;" src="./plugin_screenshot.png" alt="Screenshot of clawdbot browser relay plugin when activated" /></p>
+          <p style="padding: 15px;"><img style="width: 85%;" src="./plugin_screenshot.png" alt="Screenshot of clawdbot browser relay plugin when activated" /></p>
         </li>
         <li>Click "Run PoC" on this page</li>
-        <li>Observe cookies stolen from other tab visible in this tab</li>
-        <li>Return to other tab -- notice malicious content injected
-          <p><img src="./malicious_content.png" alt="malicious content injected into other browser tab" /></p
+        <li>If your clawdbot is vulnerable: 
+          <ul>
+            <li>Observe cookies stolen from other tab visible in this tab</li>
+            <li>
+                Notice malicious content injected
+                <p style="padding: 15px;"><img src="./malicious_content.png" alt="malicious content injected into other browser tab" /></p>
+            </li>
+          </ul>
         </li>
       </ul>
 
